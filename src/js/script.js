@@ -51,3 +51,16 @@ listProducts();
 
 const listProductsButton = document.querySelector("#productsList");
 listProductsButton.addEventListener("click", listProducts);
+
+// TOGGLE ACCORDION
+const accordion = document.querySelector(".accordion-button");
+
+const panel = document.querySelector(".panel");
+
+accordion.addEventListener("click", (e) => ***REMOVED***
+  if (panel.style.display === "block") ***REMOVED***
+    panel.style.display = "none";
+  } else ***REMOVED***
+    panel.style.display = "block";
+  }
+});
