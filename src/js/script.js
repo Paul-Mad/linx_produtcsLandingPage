@@ -28,13 +28,14 @@ const listProducts = async () => ***REMOVED***
           "beforeend",
           `
   <div class="product">
-  <img src="$***REMOVED***image}" alt="$***REMOVED***name}">
-    <div>
+    <img class='product-image' src="$***REMOVED***image}" alt="$***REMOVED***name}">
+    <div class='product-block'>
       <span class="product-name">$***REMOVED***name}</span>
       <span class="product-description">$***REMOVED***description}</span>
-      <span class="product-old-price">De: R$$***REMOVED***oldPrice}</span>
+      <span class="product-oldprice">De: R$$***REMOVED***oldPrice}</span>
       <span class="product-price">Por: R$$***REMOVED***price}</span>
       <span class="product-obs">Ou $***REMOVED***installments.count}x de Rs$$***REMOVED***installments.value}</span>
+      <button class='btn product-button'>Comprar</button>
     </div>
 </div>`
         )
