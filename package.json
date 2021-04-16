@@ -1,0 +1,26 @@
+***REMOVED***
+  "name": "linx_produtcslandingpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": ***REMOVED***
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": ***REMOVED***
+    "type": "git",
+    "url": "git+https://github.com/Paul-Mad/linx_produtcsLandingPage.git"
+  },
+  "author": "Paulo Madeira",
+  "license": "ISC",
+  "bugs": ***REMOVED***
+    "url": "https://github.com/Paul-Mad/linx_produtcsLandingPage/issues"
+  },
+  "homepage": "https://github.com/Paul-Mad/linx_produtcsLandingPage#readme",
+  "dependencies": ***REMOVED***
+    "firebase": "^8.4.1"
+  },
+  "devDependencies": ***REMOVED***
+    "parcel": "^2.0.0-beta.2"
+  }
+}
