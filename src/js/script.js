@@ -1,3 +1,5 @@
+import firestore, ***REMOVED*** convertCollectionSnapshotToMap } from "./firebase";
+
 let URL =
   "https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1";
 
@@ -66,3 +68,36 @@ accordion.addEventListener("click", (e) => ***REMOVED***
     panel.style.display = "block";
   }
 });
+
+// ----------------- SUBSCRIBER FROM ------------
+
+//Store form data in firebase database
+const addSubscriber = (subscriber) => ***REMOVED***
+  const newSubscriber = ***REMOVED***
+    name: subscriber[0].value,
+    email: subscriber[1].value,
+    cpf: subscriber[2].value,
+    gender: subscriber[3].value,
+  ***REMOVED***
+
+  //get the collection reference from firestore
+  const ref = firestore.collection("subscribers");
+  const batch = firestore.batch();
+  const newRef = ref.doc();
+  batch.set(newRef, newSubscriber);
+  batch.commit();
+***REMOVED***
+
+const formSubmit = (e) => ***REMOVED***
+  e.preventDefault();
+  //get the data from form inputs in an array
+  const subscribeFormInputs = Array.from(
+    document.querySelectorAll(".subscribe-form input")
+  );
+
+  addSubscriber(subscribeFormInputs);
+***REMOVED***
+
+//Select subscribe-form and add the event listener onsubmit
+const subscribeForm = document.querySelector(".subscribe-form ");
+subscribeForm.addEventListener("submit", formSubmit);
