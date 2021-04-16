@@ -1,4 +1,4 @@
-import firestore, ***REMOVED*** convertCollectionSnapshotToMap } from "./firebase";
+import firestore from "./firebase";
 
 let URL =
   "https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1";
