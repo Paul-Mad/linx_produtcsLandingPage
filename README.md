@@ -17,6 +17,9 @@ https://github.com/chaordic/frontend-developer-challenge
 - A Products Grid, it gets the products data from a API and list them in the page.
 - Share with a friend form.
 
+## What's left to be done:
+
+- Validate e-mail and CPF form inputs
 
 ## DEMO:
 
