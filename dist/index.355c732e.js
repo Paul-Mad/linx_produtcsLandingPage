@@ -506,6 +506,7 @@ const addSubscriber = subscriber => ***REMOVED***
   const ref = _firebaseDefault.default.collection("subscribers");
   const batch = _firebaseDefault.default.batch();
   const newRef = ref.doc();
+  // Store new subscriber
   batch.set(newRef, newSubscriber);
   batch.commit();
 ***REMOVED***

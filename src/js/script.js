@@ -84,6 +84,7 @@ const addSubscriber = (subscriber) => ***REMOVED***
   const ref = firestore.collection("subscribers");
   const batch = firestore.batch();
   const newRef = ref.doc();
+  //Store new subscriber
   batch.set(newRef, newSubscriber);
   batch.commit();
 ***REMOVED***
