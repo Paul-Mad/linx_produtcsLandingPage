@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/index.19fc6157.css">
+    <script defer="" src="/index.355c732e.js"></script>
+
+    <title>Linx Landing Page Challenge</title>
+  </head>
+
+  <body>
+    <div class="container">
+
+      
+      <!-- ---------------HEADER-------------------- -->
+
+      <header class="header">
+        <div class="content">
+          <h3>Uma seleção de produtos</h3>
+          <h1>especial para você</h1>
+  
+          <p>
+            Todos os produtos desta lista foram selecionados a partir da sua
+            navegação. Aproveite!
+          </p>
+  
+          <ul class="header-nav">
+            <li class="btn">Conheça a Linx</li>
+            <li class="btn">Ajude o algorítimo</li>
+            <li class="btn">Seus produtos</li>
+            <li class="btn">Compartilhe</li>
+          </ul>
+      </div></header>
+
+      
+      <!-- ----------------SUBSCRIBE-NEWSLETTER-FORM------------------- -->
+
+      <div class="subscribe-newsletter">
+        <div class="content">
+          <article>
+            <div class="accordion-title">
+              <h1>Ajude o algorítimo a ser mais certeiro</h1>
+              <button class="fas accordion-button">&#xf077;</button>
+             
+            </div>
+            
+            
+            <p class="panel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies tellus nec mi porta convallis sollicitudin eu urna. Mauris rhoncus erat sed interdum dignissim. Suspendisse semper pretium consectetur. Praesent bibendum arcu risus, sit amet iaculis ex tempus quis. Cras et erat ut tellus vulputate tincidunt. Aenean lacinia euismod augue vel egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum vel urna tortor. Vivamus et arcu non felis tristique eleifend. <br> <br>Morbi eu condimentum urna. Curabitur eu magna eget turpis condimentum ultrices. Suspendisse quis lorem ultricies, pulvinar purus sed, egestas erat. Etiam ultricies a ante vehicula pharetra. Quisque ut neque mattis, consequat velit ut, ultrices orci. Nulla varius elementum erat vel pharetra. Aenean sit amet nisi diam. Morbi viverra, magna ac luctus commodo, odio ante suscipit libero, at mattis augue est vel metus.</p>
+          
+          </article>
+      
+               
+          <!--             
+            -----  FORM TO BE USED WITH THE API---
+            
+            <form  action='http://localhost:3000/subscribers' method="POST" class="subscribe-form">
+            
+            -->
+
+            <!--  FORM WITHOUT THE API     -->
+            <form class="subscribe-form">
+            <div class="input">
+              <label>Seu nome:</label>
+              <input class="form-input" id="name-input" name="name" type="text" required="">
+            </div>
+            <div class="input">
+            <label>E-mail:</label>
+            <input class="form-input" id="email-input" name="email" type="text" required="">
+            </div>
+            <div class="input">
+              <label>CPF:</label>
+              <input class="form-input" id="cpf-input" name="cpf" type="text" required="">
+            </div>
+            <div class="gender-inputs">
+              <div class="gender">
+                <input class="form-input" id="masculino" name="gender" type="radio" value="masculino" required="">
+                <label>Masculino</label>
+            </div>
+            <div class="gender">
+               <input class="form-input" id="feminino" name="gender" type="radio" value="feminino" required="">
+               <label>Feminino</label>
+            </div>             
+            </div>
+            <div class="input">
+              <button class="btn" type="submit">Enviar</button>
+            </div>
+
+          </form>
+      </div>
+
+      </div>
+
+      <!--  -------------------------LIST OF PRODUCTS ------------------- -->
+      <div class="products-selection">
+        <div class="content">
+          <div class="separation">
+            <div class="separation-bar"></div>
+            <h1>Sua seleção especial</h1>
+            <div class="separation-bar"></div>
+        </div>
+        
+        <div class="products" id="products"></div>
+        
+        <div class="input">
+          <button id="productsList" class="btn product-list-btn">Ainda mais produtos aqui!</button>
+        </div>
+        </div>
+      </div>
+      <!--  ----------------------SHARE NEWSLETTER----------- -->
+
+      <div class="share-newsletter">
+          <div class="content">
+            <div class="separation">
+              <div class="separation-bar"></div>
+              <h1>Compartilhe a novidade</h1>
+              <div class="separation-bar"></div>
+            </div>
+
+            <form action="/" method="POST" class="newsletter-form">
+              <p>Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</p>
+              <div class="email-inputs">
+                  <div class="input">
+                    <label> Nome do seu amigo:</label>
+                    <input class="form-input type=" text"="" name="name" id="name" required="">
+                  </div>
+                  <div class="input">
+                    <label> E-mail:</label>
+                    <input class="form-input type=" email"="" name="email" id="email" required="">
+                  </div>
+              </div>
+              <button class="btn" type="submit">Enviar agora</button>
+            </form>
+
+          </div>
+
+
+      </div>
+
+
+
+      <!-- ----------------FOOTER------------------- -->
+
+      <footer class="footer">
+      <div class="content">
+        <p> Testando suas habilidades em HTML, CSS e JS.</p>
+        <p>link Impulse</p>
+        <p>2019</p>
+      </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+

@@ -1,6 +1,7 @@
 let URL =
   "https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1";
 
+// ---------------LOAD PRODUCTS FROM THE API ---------------------
 const getProducts = async (url) => ***REMOVED***
   try ***REMOVED***
     const res = await fetch(url);
@@ -14,6 +15,7 @@ const getProducts = async (url) => ***REMOVED***
   }
 ***REMOVED***
 
+// ----------------------------SHOW PRODUCTS-----------------------
 const listProducts = async () => ***REMOVED***
   try ***REMOVED***
     const data = await getProducts(URL);
@@ -52,7 +54,7 @@ listProducts();
 const listProductsButton = document.querySelector("#productsList");
 listProductsButton.addEventListener("click", listProducts);
 
-// TOGGLE ACCORDION
+// ----------------TOGGLE ACCORDION--------------------------
 const accordion = document.querySelector(".accordion-button");
 
 const panel = document.querySelector(".panel");
