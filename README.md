@@ -17,14 +17,20 @@ https://github.com/chaordic/frontend-developer-challenge
 - A Products Grid, it gets the products data from a API and list them in the page.
 - Share with a friend form.
 
+## What's left to be done:
+
+- Validate e-mail and CPF form inputs
 
 ## DEMO:
 
 https://linx-landingpage-challenge-pm.netlify.app/
 
+## The subscribers list can be accessed here:
+
+https://linx-subscribers-pm.netlify.app/.netlify/functions/server/subscribers
 
 
-Technologies used:   HTML / CSS / Javascript / Parcel bundler / Firebase
+
 
 
 ## How to run the project:
@@ -43,7 +49,7 @@ npm start
 
 
 
-
+## Technologies used:   HTML / CSS / Javascript / Parcel bundler / Firebase
 
 
 
