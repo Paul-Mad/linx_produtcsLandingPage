@@ -76,25 +76,29 @@ accordion.addEventListener("click", (e) => ***REMOVED***
 
 //Store form data in firebase database
 const addSubscriber = (subscriber) => ***REMOVED***
-  //validate cpf-input
-  const validCpf = validateCpf(subscriber[2].value);
-
-  if (!validCpf) ***REMOVED***
-    document.getElementById("invalidCpf").style.display = "flex";
-    return;
-  } else ***REMOVED***
-    document.getElementById("invalidCpf").style.display = "none";
-  }
-
   //validate email-input
   const validEmail = ValidateEmail(subscriber[1].value);
 
   if (!validEmail) ***REMOVED***
     document.getElementById("invalidEmail").style.display = "flex";
+    subscriber[1].focus();
     return;
   } else ***REMOVED***
     document.getElementById("invalidEmail").style.display = "none";
   }
+
+  //validate cpf-input
+  const validCpf = validateCpf(subscriber[2].value);
+
+  if (!validCpf) ***REMOVED***
+    document.getElementById("invalidCpf").style.display = "flex";
+    subscriber[2].focus();
+    return;
+  } else ***REMOVED***
+    document.getElementById("invalidCpf").style.display = "none";
+  }
+
+  //create a new subscriber object with the form data
   const newSubscriber = ***REMOVED***
     name: subscriber[0].value,
     email: validEmail,
@@ -112,7 +116,7 @@ const addSubscriber = (subscriber) => ***REMOVED***
 ***REMOVED***
 
 //get the data from form inputs in an array and call the addSubscribers function
-const formSubmit = (e) => ***REMOVED***
+const onSubscribeFormSubmit = (e) => ***REMOVED***
   e.preventDefault();
 
   const subscribeFormInputs = Array.from(
@@ -124,7 +128,32 @@ const formSubmit = (e) => ***REMOVED***
 
 //Select subscribe-form and add the event listener onsubmit
 const subscribeForm = document.querySelector(".subscribe-form ");
-subscribeForm.addEventListener("submit", formSubmit);
+subscribeForm.addEventListener("submit", onSubscribeFormSubmit);
+
+// ----------------- SHARE WITH A FRIEND FROM ------------------------
+
+const shareNewsletter = (shareFormInputs) => ***REMOVED***
+  const validEmail = ValidateEmail(shareFormInputs[1].value);
+
+  if (!validEmail) ***REMOVED***
+    document.getElementById("invalidEmail-share").style.display = "flex";
+    shareFormInputs[1].focus();
+    return;
+  } else ***REMOVED***
+    document.getElementById("invalidEmail-share").style.display = "none";
+  }
+
+  alert("E-mail enviado com sucesso!");
+***REMOVED***
+
+const onShareFormSubmit = (e) => ***REMOVED***
+  e.preventDefault();
+  const shareFormInputs = document.querySelectorAll(".newsletter-form input");
+
+  shareNewsletter(shareFormInputs);
+***REMOVED***
+const shareForm = document.querySelector(".newsletter-form");
+shareForm.addEventListener("submit", onShareFormSubmit);
 
 // ------------- CPF VALIDATION--------------------------------
 
