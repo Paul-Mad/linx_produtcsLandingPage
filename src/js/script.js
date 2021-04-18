@@ -50,17 +50,20 @@ const listProducts = async () => ***REMOVED***
     console.error(error.message);
   }
 ***REMOVED***
-
+// Call the function to be listed for the first time when the page loads
 listProducts();
 
+// listen to the "mais produtos" button click event
 const listProductsButton = document.querySelector("#productsList");
 listProductsButton.addEventListener("click", listProducts);
 
 // ----------------TOGGLE ACCORDION--------------------------
-const accordion = document.querySelector(".accordion-button");
 
+//Select accordion and text panel
+const accordion = document.querySelector(".accordion-button");
 const panel = document.querySelector(".panel");
 
+//Listen to the accordion- button click event
 accordion.addEventListener("click", (e) => ***REMOVED***
   if (panel.style.display === "block") ***REMOVED***
     panel.style.display = "none";
@@ -89,9 +92,10 @@ const addSubscriber = (subscriber) => ***REMOVED***
   batch.commit();
 ***REMOVED***
 
+//get the data from form inputs in an array and call the addSubscribers function
 const formSubmit = (e) => ***REMOVED***
   e.preventDefault();
-  //get the data from form inputs in an array
+
   const subscribeFormInputs = Array.from(
     document.querySelectorAll(".subscribe-form input")
   );
