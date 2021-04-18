@@ -25,6 +25,9 @@ https://github.com/chaordic/frontend-developer-challenge
 
 https://linx-landingpage-challenge-pm.netlify.app/
 
+## The subscribers list can be accessed here:
+
+https://linx-subscribers-pm.netlify.app/.netlify/functions/server/subscribers
 
 
 Technologies used:   HTML / CSS / Javascript / Parcel bundler / Firebase
