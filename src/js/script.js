@@ -76,10 +76,20 @@ accordion.addEventListener("click", (e) => ***REMOVED***
 
 //Store form data in firebase database
 const addSubscriber = (subscriber) => ***REMOVED***
+  //validate cpf-input
+  const validCpf = testaCPF(subscriber[2].value);
+
+  if (!validCpf) ***REMOVED***
+    document.getElementById("invalidCpf").style.display = "flex";
+    return;
+  } else ***REMOVED***
+    document.getElementById("invalidCpf").style.display = "none";
+  }
+
   const newSubscriber = ***REMOVED***
     name: subscriber[0].value,
     email: subscriber[1].value,
-    cpf: subscriber[2].value,
+    cpf: validCpf,
     gender: subscriber[3].value,
   ***REMOVED***
 
@@ -102,6 +112,32 @@ const formSubmit = (e) => ***REMOVED***
 
   addSubscriber(subscribeFormInputs);
 ***REMOVED***
+
+// ------------- CPF VALIDATION-----------------
+
+//code from Receita Federal
+function testaCPF(strCPF) ***REMOVED***
+  let Soma;
+  let Resto;
+  Soma = 0;
+  if (strCPF == "00000000000") return false;
+
+  for (i = 1; i <= 9; i++)
+    Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+  Resto = (Soma * 10) % 11;
+
+  if (Resto == 10 || Resto == 11) Resto = 0;
+  if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+
+  Soma = 0;
+  for (i = 1; i <= 10; i++)
+    Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+  Resto = (Soma * 10) % 11;
+
+  if (Resto == 10 || Resto == 11) Resto = 0;
+  if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+  return strCPF;
+}
 
 //Select subscribe-form and add the event listener onsubmit
 const subscribeForm = document.querySelector(".subscribe-form ");

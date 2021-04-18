@@ -480,12 +480,16 @@ const listProducts = async () => ***REMOVED***
     console.error(error.message);
   }
 ***REMOVED***
+// Call the function to be listed for the first time when the page loads
 listProducts();
+// listen to the "mais produtos" button click event
 const listProductsButton = document.querySelector("#productsList");
 listProductsButton.addEventListener("click", listProducts);
 // ----------------TOGGLE ACCORDION--------------------------
+// Select accordion and text panel
 const accordion = document.querySelector(".accordion-button");
 const panel = document.querySelector(".panel");
+// Listen to the accordion- button click event
 accordion.addEventListener("click", e => ***REMOVED***
   if (panel.style.display === "block") ***REMOVED***
     panel.style.display = "none";
@@ -496,10 +500,18 @@ accordion.addEventListener("click", e => ***REMOVED***
 // ----------------- SUBSCRIBER FROM ------------
 // Store form data in firebase database
 const addSubscriber = subscriber => ***REMOVED***
+  // validate cpf-input
+  const validCpf = testaCPF(subscriber[2].value);
+  if (!validCpf) ***REMOVED***
+    document.getElementById("invalidCpf").style.display = "flex";
+    return;
+  } else ***REMOVED***
+    document.getElementById("invalidCpf").style.display = "none";
+  }
   const newSubscriber = ***REMOVED***
     name: subscriber[0].value,
     email: subscriber[1].value,
-    cpf: subscriber[2].value,
+    cpf: validCpf,
     gender: subscriber[3].value
   ***REMOVED***
   // get the collection reference from firestore
@@ -510,12 +522,30 @@ const addSubscriber = subscriber => ***REMOVED***
   batch.set(newRef, newSubscriber);
   batch.commit();
 ***REMOVED***
+// get the data from form inputs in an array and call the addSubscribers function
 const formSubmit = e => ***REMOVED***
   e.preventDefault();
-  // get the data from form inputs in an array
   const subscribeFormInputs = Array.from(document.querySelectorAll(".subscribe-form input"));
   addSubscriber(subscribeFormInputs);
 ***REMOVED***
+// ------------- CPF VALIDATION-----------------
+// code from Receita Federal
+function testaCPF(strCPF) ***REMOVED***
+  let Soma;
+  let Resto;
+  Soma = 0;
+  if (strCPF == "00000000000") return false;
+  for (i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+  Resto = Soma * 10 % 11;
+  if (Resto == 10 || Resto == 11) Resto = 0;
+  if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+  Soma = 0;
+  for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+  Resto = Soma * 10 % 11;
+  if (Resto == 10 || Resto == 11) Resto = 0;
+  if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+  return strCPF;
+}
 // Select subscribe-form and add the event listener onsubmit
 const subscribeForm = document.querySelector(".subscribe-form ");
 subscribeForm.addEventListener("submit", formSubmit);
