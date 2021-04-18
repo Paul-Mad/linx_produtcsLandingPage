@@ -30,7 +30,7 @@ https://linx-landingpage-challenge-pm.netlify.app/
 https://linx-subscribers-pm.netlify.app/.netlify/functions/server/subscribers
 
 
-Technologies used:   HTML / CSS / Javascript / Parcel bundler / Firebase
+
 
 
 ## How to run the project:
@@ -49,7 +49,7 @@ npm start
 
 
 
-
+## Technologies used:   HTML / CSS / Javascript / Parcel bundler / Firebase
 
 
 
