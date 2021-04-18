@@ -72,12 +72,12 @@ accordion.addEventListener("click", (e) => ***REMOVED***
   }
 });
 
-// ----------------- SUBSCRIBER FROM ------------
+// ----------------- SUBSCRIBER FROM ------------------------
 
 //Store form data in firebase database
 const addSubscriber = (subscriber) => ***REMOVED***
   //validate cpf-input
-  const validCpf = testaCPF(subscriber[2].value);
+  const validCpf = validateCpf(subscriber[2].value);
 
   if (!validCpf) ***REMOVED***
     document.getElementById("invalidCpf").style.display = "flex";
@@ -86,9 +86,18 @@ const addSubscriber = (subscriber) => ***REMOVED***
     document.getElementById("invalidCpf").style.display = "none";
   }
 
+  //validate email-input
+  const validEmail = ValidateEmail(subscriber[1].value);
+
+  if (!validEmail) ***REMOVED***
+    document.getElementById("invalidEmail").style.display = "flex";
+    return;
+  } else ***REMOVED***
+    document.getElementById("invalidEmail").style.display = "none";
+  }
   const newSubscriber = ***REMOVED***
     name: subscriber[0].value,
-    email: subscriber[1].value,
+    email: validEmail,
     cpf: validCpf,
     gender: subscriber[3].value,
   ***REMOVED***
@@ -113,10 +122,14 @@ const formSubmit = (e) => ***REMOVED***
   addSubscriber(subscribeFormInputs);
 ***REMOVED***
 
-// ------------- CPF VALIDATION-----------------
+//Select subscribe-form and add the event listener onsubmit
+const subscribeForm = document.querySelector(".subscribe-form ");
+subscribeForm.addEventListener("submit", formSubmit);
+
+// ------------- CPF VALIDATION--------------------------------
 
 //code from Receita Federal
-const testaCPF = (cpf) => ***REMOVED***
+const validateCpf = (cpf) => ***REMOVED***
   cpf = cpf.replace(/[^\d]+/g, "");
 
   if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
@@ -136,10 +149,18 @@ const testaCPF = (cpf) => ***REMOVED***
   return cpf;
 ***REMOVED***
 
-//Select subscribe-form and add the event listener onsubmit
-const subscribeForm = document.querySelector(".subscribe-form ");
-subscribeForm.addEventListener("submit", formSubmit);
-
+// set mask to the cpf-input
 const cpfMask = IMask(document.getElementById("cpf-input"), ***REMOVED***
   mask: "000.000.000-00",
 });
+
+//-----------------EMAIL-VALIDATION------------------
+
+const ValidateEmail = (email) => ***REMOVED***
+  const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`***REMOVED***|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (email.match(emailFormat)) ***REMOVED***
+    return email;
+  } else ***REMOVED***
+    return false;
+  }
+***REMOVED***
