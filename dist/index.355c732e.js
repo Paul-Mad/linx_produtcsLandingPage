@@ -530,25 +530,27 @@ const formSubmit = e => ***REMOVED***
 ***REMOVED***
 // ------------- CPF VALIDATION-----------------
 // code from Receita Federal
-function testaCPF(strCPF) ***REMOVED***
-  let Soma;
-  let Resto;
-  Soma = 0;
-  if (strCPF == "00000000000") return false;
-  for (i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
-  Resto = Soma * 10 % 11;
-  if (Resto == 10 || Resto == 11) Resto = 0;
-  if (Resto != parseInt(strCPF.substring(9, 10))) return false;
-  Soma = 0;
-  for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
-  Resto = Soma * 10 % 11;
-  if (Resto == 10 || Resto == 11) Resto = 0;
-  if (Resto != parseInt(strCPF.substring(10, 11))) return false;
-  return strCPF;
-}
+const testaCPF = cpf => ***REMOVED***
+  cpf = cpf.replace(/[^\d]+/g, "");
+  if (cpf.length !== 11 || (/^(\d)\1+$/).test(cpf)) return false;
+  let soma = 0, resto;
+  for (let i = 1; i <= 9; i++) soma = soma + parseInt(cpf.substring(i - 1, i)) * (11 - i);
+  resto = soma * 10 % 11;
+  if (resto == 10 || resto == 11) resto = 0;
+  if (resto != parseInt(cpf.substring(9, 10))) return false;
+  soma = 0;
+  for (let i = 1; i <= 10; i++) soma = soma + parseInt(cpf.substring(i - 1, i)) * (12 - i);
+  resto = soma * 10 % 11;
+  if (resto == 10 || resto == 11) resto = 0;
+  if (resto != parseInt(cpf.substring(10, 11))) return false;
+  return cpf;
+***REMOVED***
 // Select subscribe-form and add the event listener onsubmit
 const subscribeForm = document.querySelector(".subscribe-form ");
 subscribeForm.addEventListener("submit", formSubmit);
+const cpfMask = IMask(document.getElementById("cpf-input"), ***REMOVED***
+  mask: "000.000.000-00"
+});
 
 },***REMOVED***"./firebase":"6lkjF","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"6lkjF":[function(require,module,exports) ***REMOVED***
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
