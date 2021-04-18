@@ -12,14 +12,12 @@ https://github.com/chaordic/frontend-developer-challenge
 
 ## About project:
 
-- A responsive landing page that can be accessed from desktops and mobiles devices.
+- Responsive landing page that can be accessed from desktops and mobiles devices.
 - Newsletter subscribe form to store subscribers data in firebase.
+- E-mail and CPF validation in form inputs.
 - A Products Grid, it gets the products data from a API and list them in the page.
 - Share with a friend form.
 
-## What's left to be done:
-
-- Validate e-mail and CPF form inputs
 
 ## DEMO:
 
