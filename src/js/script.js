@@ -1,4 +1,5 @@
-import firestore from "./firebase";
+import ***REMOVED*** ValidateEmail, validateCpf } from "./validation.helper";
+import ***REMOVED*** setData } from "./firebase";
 
 let URL =
   "https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1";
@@ -50,27 +51,6 @@ const listProducts = async () => ***REMOVED***
     console.error(error.message);
   }
 ***REMOVED***
-// Call the function to be listed for the first time when the page loads
-listProducts();
-
-// listen to the "mais produtos" button click event
-const listProductsButton = document.querySelector("#productsList");
-listProductsButton.addEventListener("click", listProducts);
-
-// ----------------TOGGLE ACCORDION--------------------------
-
-//Select accordion and text panel
-const accordion = document.querySelector(".accordion-button");
-const panel = document.querySelector(".panel");
-
-//Listen to the accordion- button click event
-accordion.addEventListener("click", (e) => ***REMOVED***
-  if (panel.style.display === "block") ***REMOVED***
-    panel.style.display = "none";
-  } else ***REMOVED***
-    panel.style.display = "block";
-  }
-});
 
 // ----------------- SUBSCRIBER FROM ------------------------
 
@@ -104,31 +84,21 @@ const addSubscriber = (subscriber) => ***REMOVED***
     email: validEmail,
     cpf: validCpf,
     gender: subscriber[3].value,
+    dateAdded: new Date(),
   ***REMOVED***
 
-  //get the collection reference from firestore
-  const ref = firestore.collection("subscribers");
-  const batch = firestore.batch();
-  const newRef = ref.doc();
   //Store new subscriber
-  batch.set(newRef, newSubscriber);
-  batch.commit();
+  setData(newSubscriber);
 ***REMOVED***
 
 //get the data from form inputs in an array and call the addSubscribers function
 const onSubscribeFormSubmit = (e) => ***REMOVED***
   e.preventDefault();
-
   const subscribeFormInputs = Array.from(
     document.querySelectorAll(".subscribe-form input")
   );
-
   addSubscriber(subscribeFormInputs);
 ***REMOVED***
-
-//Select subscribe-form and add the event listener onsubmit
-const subscribeForm = document.querySelector(".subscribe-form ");
-subscribeForm.addEventListener("submit", onSubscribeFormSubmit);
 
 // ----------------- SHARE WITH A FRIEND FROM ------------------------
 
@@ -152,44 +122,35 @@ const onShareFormSubmit = (e) => ***REMOVED***
 
   shareNewsletter(shareFormInputs);
 ***REMOVED***
+
+//-----------------ELEMENT SELECTORS ----------------------------------------
+
+// select shareForm
 const shareForm = document.querySelector(".newsletter-form");
+//Select subscribe-form
+const subscribeForm = document.querySelector(".subscribe-form ");
+//Select accordion and text panel
+const accordion = document.querySelector(".accordion-button");
+const panel = document.querySelector(".panel");
+// Select "mais produtos" button
+const listProductsButton = document.querySelector("#productsList");
+
+//------------------------ EVENTS---------------------------------------------
+
+//shareForm Button Submit Event
 shareForm.addEventListener("submit", onShareFormSubmit);
-
-// ------------- CPF VALIDATION--------------------------------
-
-//code from Receita Federal
-const validateCpf = (cpf) => ***REMOVED***
-  cpf = cpf.replace(/[^\d]+/g, "");
-
-  if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
-  let soma = 0,
-    resto;
-  for (let i = 1; i <= 9; i++)
-    soma = soma + parseInt(cpf.substring(i - 1, i)) * (11 - i);
-  resto = (soma * 10) % 11;
-  if (resto == 10 || resto == 11) resto = 0;
-  if (resto != parseInt(cpf.substring(9, 10))) return false;
-  soma = 0;
-  for (let i = 1; i <= 10; i++)
-    soma = soma + parseInt(cpf.substring(i - 1, i)) * (12 - i);
-  resto = (soma * 10) % 11;
-  if (resto == 10 || resto == 11) resto = 0;
-  if (resto != parseInt(cpf.substring(10, 11))) return false;
-  return cpf;
-***REMOVED***
-
-// set mask to the cpf-input
-const cpfMask = IMask(document.getElementById("cpf-input"), ***REMOVED***
-  mask: "000.000.000-00",
+//subscribeForm Button submit Event
+subscribeForm.addEventListener("submit", onSubscribeFormSubmit);
+//'Mais Produtos' Button click Event
+listProductsButton.addEventListener("click", listProducts);
+//Accordion- button click event
+accordion.addEventListener("click", (e) => ***REMOVED***
+  if (panel.style.display === "block") ***REMOVED***
+    panel.style.display = "none";
+  } else ***REMOVED***
+    panel.style.display = "block";
+  }
 });
 
-//-----------------EMAIL-VALIDATION------------------
-
-const ValidateEmail = (email) => ***REMOVED***
-  const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`***REMOVED***|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  if (email.match(emailFormat)) ***REMOVED***
-    return email;
-  } else ***REMOVED***
-    return false;
-  }
-***REMOVED***
+// Call the function to be listed for the first time when the page loads
+listProducts();

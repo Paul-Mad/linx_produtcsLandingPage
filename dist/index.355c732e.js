@@ -442,9 +442,8 @@ id) /*: string*/
 }
 
 },***REMOVED***}],"3GZMZ":[function(require,module,exports) ***REMOVED***
+var _validationHelper = require("./validation.helper");
 var _firebase = require("./firebase");
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-var _firebaseDefault = _parcelHelpers.interopDefault(_firebase);
 let URL = "https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1";
 // ---------------LOAD PRODUCTS FROM THE API ---------------------
 const getProducts = async url => ***REMOVED***
@@ -480,28 +479,11 @@ const listProducts = async () => ***REMOVED***
     console.error(error.message);
   }
 ***REMOVED***
-// Call the function to be listed for the first time when the page loads
-listProducts();
-// listen to the "mais produtos" button click event
-const listProductsButton = document.querySelector("#productsList");
-listProductsButton.addEventListener("click", listProducts);
-// ----------------TOGGLE ACCORDION--------------------------
-// Select accordion and text panel
-const accordion = document.querySelector(".accordion-button");
-const panel = document.querySelector(".panel");
-// Listen to the accordion- button click event
-accordion.addEventListener("click", e => ***REMOVED***
-  if (panel.style.display === "block") ***REMOVED***
-    panel.style.display = "none";
-  } else ***REMOVED***
-    panel.style.display = "block";
-  }
-});
 // ----------------- SUBSCRIBER FROM ------------------------
 // Store form data in firebase database
 const addSubscriber = subscriber => ***REMOVED***
   // validate email-input
-  const validEmail = ValidateEmail(subscriber[1].value);
+  const validEmail = _validationHelper.ValidateEmail(subscriber[1].value);
   if (!validEmail) ***REMOVED***
     document.getElementById("invalidEmail").style.display = "flex";
     subscriber[1].focus();
@@ -510,7 +492,7 @@ const addSubscriber = subscriber => ***REMOVED***
     document.getElementById("invalidEmail").style.display = "none";
   }
   // validate cpf-input
-  const validCpf = validateCpf(subscriber[2].value);
+  const validCpf = _validationHelper.validateCpf(subscriber[2].value);
   if (!validCpf) ***REMOVED***
     document.getElementById("invalidCpf").style.display = "flex";
     subscriber[2].focus();
@@ -523,15 +505,11 @@ const addSubscriber = subscriber => ***REMOVED***
     name: subscriber[0].value,
     email: validEmail,
     cpf: validCpf,
-    gender: subscriber[3].value
+    gender: subscriber[3].value,
+    dateAdded: new Date()
   ***REMOVED***
-  // get the collection reference from firestore
-  const ref = _firebaseDefault.default.collection("subscribers");
-  const batch = _firebaseDefault.default.batch();
-  const newRef = ref.doc();
   // Store new subscriber
-  batch.set(newRef, newSubscriber);
-  batch.commit();
+  _firebase.setData(newSubscriber);
 ***REMOVED***
 // get the data from form inputs in an array and call the addSubscribers function
 const onSubscribeFormSubmit = e => ***REMOVED***
@@ -539,12 +517,9 @@ const onSubscribeFormSubmit = e => ***REMOVED***
   const subscribeFormInputs = Array.from(document.querySelectorAll(".subscribe-form input"));
   addSubscriber(subscribeFormInputs);
 ***REMOVED***
-// Select subscribe-form and add the event listener onsubmit
-const subscribeForm = document.querySelector(".subscribe-form ");
-subscribeForm.addEventListener("submit", onSubscribeFormSubmit);
 // ----------------- SHARE WITH A FRIEND FROM ------------------------
 const shareNewsletter = shareFormInputs => ***REMOVED***
-  const validEmail = ValidateEmail(shareFormInputs[1].value);
+  const validEmail = _validationHelper.ValidateEmail(shareFormInputs[1].value);
   if (!validEmail) ***REMOVED***
     document.getElementById("invalidEmail-share").style.display = "flex";
     shareFormInputs[1].focus();
@@ -559,10 +534,43 @@ const onShareFormSubmit = e => ***REMOVED***
   const shareFormInputs = document.querySelectorAll(".newsletter-form input");
   shareNewsletter(shareFormInputs);
 ***REMOVED***
+// -----------------ELEMENT SELECTORS ----------------------------------------
+// select shareForm
 const shareForm = document.querySelector(".newsletter-form");
+// Select subscribe-form
+const subscribeForm = document.querySelector(".subscribe-form ");
+// Select accordion and text panel
+const accordion = document.querySelector(".accordion-button");
+const panel = document.querySelector(".panel");
+// Select "mais produtos" button
+const listProductsButton = document.querySelector("#productsList");
+// ------------------------ EVENTS---------------------------------------------
+// shareForm Button Submit Event
 shareForm.addEventListener("submit", onShareFormSubmit);
-// ------------- CPF VALIDATION--------------------------------
-// code from Receita Federal
+// subscribeForm Button submit Event
+subscribeForm.addEventListener("submit", onSubscribeFormSubmit);
+// 'Mais Produtos' Button click Event
+listProductsButton.addEventListener("click", listProducts);
+// Accordion- button click event
+accordion.addEventListener("click", e => ***REMOVED***
+  if (panel.style.display === "block") ***REMOVED***
+    panel.style.display = "none";
+  } else ***REMOVED***
+    panel.style.display = "block";
+  }
+});
+// Call the function to be listed for the first time when the page loads
+listProducts();
+
+},***REMOVED***"./validation.helper":"XKE9k","./firebase":"6lkjF"}],"XKE9k":[function(require,module,exports) ***REMOVED***
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "validateCpf", function () ***REMOVED***
+  return validateCpf;
+});
+_parcelHelpers.export(exports, "ValidateEmail", function () ***REMOVED***
+  return ValidateEmail;
+});
 const validateCpf = cpf => ***REMOVED***
   cpf = cpf.replace(/[^\d]+/g, "");
   if (cpf.length !== 11 || (/^(\d)\1+$/).test(cpf)) return false;
@@ -582,7 +590,6 @@ const validateCpf = cpf => ***REMOVED***
 const cpfMask = IMask(document.getElementById("cpf-input"), ***REMOVED***
   mask: "000.000.000-00"
 });
-// -----------------EMAIL-VALIDATION------------------
 const ValidateEmail = email => ***REMOVED***
   const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`***REMOVED***|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   if (email.match(emailFormat)) ***REMOVED***
@@ -592,9 +599,54 @@ const ValidateEmail = email => ***REMOVED***
   }
 ***REMOVED***
 
-},***REMOVED***"./firebase":"6lkjF","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"6lkjF":[function(require,module,exports) ***REMOVED***
+},***REMOVED***"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5gA8y":[function(require,module,exports) ***REMOVED***
+"use strict";
+
+exports.interopDefault = function (a) ***REMOVED***
+  return a && a.__esModule ? a : ***REMOVED***
+    default: a
+  ***REMOVED***
+***REMOVED***
+
+exports.defineInteropFlag = function (a) ***REMOVED***
+  Object.defineProperty(a, '__esModule', ***REMOVED***
+    value: true
+  });
+***REMOVED***
+
+exports.exportAll = function (source, dest) ***REMOVED***
+  Object.keys(source).forEach(function (key) ***REMOVED***
+    if (key === 'default' || key === '__esModule') ***REMOVED***
+      return;
+    } // Skip duplicate re-exports when they have the same value.
+
+
+    if (key in dest && dest[key] === source[key]) ***REMOVED***
+      return;
+    }
+
+    Object.defineProperty(dest, key, ***REMOVED***
+      enumerable: true,
+      get: function () ***REMOVED***
+        return source[key];
+      }
+    });
+  });
+  return dest;
+***REMOVED***
+
+exports.export = function (dest, destName, get) ***REMOVED***
+  Object.defineProperty(dest, destName, ***REMOVED***
+    enumerable: true,
+    get: get
+  });
+***REMOVED***
+},***REMOVED***}],"6lkjF":[function(require,module,exports) ***REMOVED***
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "setData", function () ***REMOVED***
+  return setData;
+});
 var _firebaseApp = require("firebase/app");
 var _firebaseAppDefault = _parcelHelpers.interopDefault(_firebaseApp);
 require("firebase/firestore");
@@ -610,6 +662,15 @@ const config = ***REMOVED***
 // Initialize Firebase
 _firebaseAppDefault.default.initializeApp(config);
 const firestore = _firebaseAppDefault.default.firestore();
+const setData = newSubscriber => ***REMOVED***
+  // get the collection reference from firestore
+  const ref = firestore.collection("subscribers");
+  const batch = firestore.batch();
+  const newRef = ref.doc();
+  // Store new subscriber
+  batch.set(newRef, newSubscriber);
+  batch.commit();
+***REMOVED***
 exports.default = firestore;
 
 },***REMOVED***"firebase/app":"6wFrx","firebase/firestore":"5Eq2v","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"6wFrx":[function(require,module,exports) ***REMOVED***
@@ -3559,49 +3620,7 @@ function getModularInstance(service) ***REMOVED***
   }
 }
 
-},***REMOVED***"tslib":"4rd38","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5gA8y":[function(require,module,exports) ***REMOVED***
-"use strict";
-
-exports.interopDefault = function (a) ***REMOVED***
-  return a && a.__esModule ? a : ***REMOVED***
-    default: a
-  ***REMOVED***
-***REMOVED***
-
-exports.defineInteropFlag = function (a) ***REMOVED***
-  Object.defineProperty(a, '__esModule', ***REMOVED***
-    value: true
-  });
-***REMOVED***
-
-exports.exportAll = function (source, dest) ***REMOVED***
-  Object.keys(source).forEach(function (key) ***REMOVED***
-    if (key === 'default' || key === '__esModule') ***REMOVED***
-      return;
-    } // Skip duplicate re-exports when they have the same value.
-
-
-    if (key in dest && dest[key] === source[key]) ***REMOVED***
-      return;
-    }
-
-    Object.defineProperty(dest, key, ***REMOVED***
-      enumerable: true,
-      get: function () ***REMOVED***
-        return source[key];
-      }
-    });
-  });
-  return dest;
-***REMOVED***
-
-exports.export = function (dest, destName, get) ***REMOVED***
-  Object.defineProperty(dest, destName, ***REMOVED***
-    enumerable: true,
-    get: get
-  });
-***REMOVED***
-},***REMOVED***}],"5qT0x":[function(require,module,exports) ***REMOVED***
+},***REMOVED***"tslib":"4rd38","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5qT0x":[function(require,module,exports) ***REMOVED***
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 _parcelHelpers.export(exports, "Component", function () ***REMOVED***
