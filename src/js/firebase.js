@@ -23,6 +23,7 @@ export const setData = (newSubscriber) => ***REMOVED***
   //Store new subscriber
   batch.set(newRef, newSubscriber);
   batch.commit();
+  alert("Cadastro efetuado com sucesso!");
 ***REMOVED***
 
 export default firestore;

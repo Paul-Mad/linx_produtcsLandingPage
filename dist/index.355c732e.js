@@ -482,6 +482,7 @@ const listProducts = async () => ***REMOVED***
 // ----------------- SUBSCRIBER FROM ------------------------
 // Store form data in firebase database
 const addSubscriber = subscriber => ***REMOVED***
+  console.log(subscriber);
   // validate email-input
   const validEmail = _validationHelper.ValidateEmail(subscriber[1].value);
   if (!validEmail) ***REMOVED***
@@ -505,7 +506,7 @@ const addSubscriber = subscriber => ***REMOVED***
     name: subscriber[0].value,
     email: validEmail,
     cpf: validCpf,
-    gender: subscriber[3].value,
+    gender: subscriber[3].value && subscriber[4].value,
     dateAdded: new Date()
   ***REMOVED***
   // Store new subscriber
@@ -670,6 +671,7 @@ const setData = newSubscriber => ***REMOVED***
   // Store new subscriber
   batch.set(newRef, newSubscriber);
   batch.commit();
+  alert("Cadastro efetuado com sucesso!");
 ***REMOVED***
 exports.default = firestore;
 

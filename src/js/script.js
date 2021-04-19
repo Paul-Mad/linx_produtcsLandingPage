@@ -56,6 +56,7 @@ const listProducts = async () => ***REMOVED***
 
 //Store form data in firebase database
 const addSubscriber = (subscriber) => ***REMOVED***
+  console.log(subscriber);
   //validate email-input
   const validEmail = ValidateEmail(subscriber[1].value);
 
@@ -83,7 +84,7 @@ const addSubscriber = (subscriber) => ***REMOVED***
     name: subscriber[0].value,
     email: validEmail,
     cpf: validCpf,
-    gender: subscriber[3].value,
+    gender: subscriber[3].value && subscriber[4].value,
     dateAdded: new Date(),
   ***REMOVED***
 
