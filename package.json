@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": ***REMOVED***
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "repository": ***REMOVED***
     "type": "git",
@@ -21,6 +21,8 @@
     "firebase": "^8.4.1"
   },
   "devDependencies": ***REMOVED***
-    "parcel": "^2.0.0-beta.2"
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "parcel": "^2.0.0-beta.2",
+    "sass": "^1.32.11"
   }
 }
