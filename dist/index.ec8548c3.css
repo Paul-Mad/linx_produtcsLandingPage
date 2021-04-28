@@ -1,14 +1,14 @@
 /* Products  styles */
 /* footer  styles */
 /*  end footer styles */
-* ***REMOVED***
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   outline: 0;
 }
 
-body ***REMOVED***
+body {
   width: 100%;
   min-height: 100%;
   margin: 0;
@@ -19,7 +19,7 @@ body ***REMOVED***
   background-color: #ffffff;
 }
 
-.btn ***REMOVED***
+.btn {
   max-width: 260px;
   width: 100%;
   height: 39px;
@@ -30,11 +30,11 @@ body ***REMOVED***
   background: #ffffff;
   color: #888888;
 }
-.btn:hover ***REMOVED***
+.btn:hover {
   background: #dcdcdc;
 }
 
-.form-input ***REMOVED***
+.form-input {
   width: 100%;
   height: 30px;
   margin: 10px 0;
@@ -42,54 +42,54 @@ body ***REMOVED***
   font-size: 12px;
 }
 
-.content ***REMOVED***
+.content {
   max-width: 1000px;
   width: 70%;
   margin: 0 auto;
 }
 
-.container ***REMOVED***
+.container {
   width: 100%;
   background: #ffffff 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 
 /* header  styles */
-.header ***REMOVED***
+.header {
   width: 100%;
   padding-top: 69px;
   height: 100%;
   background: linear-gradient(184deg, #707070 75%, #ffffff 50%);
 }
-.header .content ***REMOVED***
+.header .content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.header .content h3 ***REMOVED***
+.header .content h3 {
   color: #ffffff;
   font-size: 20px;
   font-weight: 400;
   align-self: flex-start;
 }
-.header .content h1 ***REMOVED***
+.header .content h1 {
   font-size: 40px;
   height: 48px;
   color: #ffffff;
   align-self: flex-start;
 }
-.header .content p ***REMOVED***
+.header .content p {
   font-size: 14px;
   margin-top: 24px;
   color: #ffffff;
   align-self: flex-start;
 }
-.header .content span ***REMOVED***
+.header .content span {
   color: #ffffff;
   align-self: center;
 }
-.header .content .header-nav ***REMOVED***
+.header .content .header-nav {
   margin: 0 auto 129px;
   margin-top: 50px;
   justify-content: center;
@@ -97,7 +97,7 @@ body ***REMOVED***
   flex-wrap: wrap;
   display: flex;
 }
-.header .content .header-nav li ***REMOVED***
+.header .content .header-nav li {
   width: 160px;
   font-size: 14px;
   display: flex;
@@ -107,10 +107,10 @@ body ***REMOVED***
 }
 
 /* Subscribe  styles*/
-.subscribe-newsletter .content ***REMOVED***
+.subscribe-newsletter .content {
   display: flex;
 }
-.subscribe-newsletter .content article ***REMOVED***
+.subscribe-newsletter .content article {
   color: #888888;
   width: 100%;
   max-width: 520px;
@@ -118,58 +118,58 @@ body ***REMOVED***
   float: left;
   display: block;
 }
-.subscribe-newsletter .content article p ***REMOVED***
+.subscribe-newsletter .content article p {
   font-size: 12px;
 }
-.subscribe-newsletter .content article .accordion-title .accordion-button ***REMOVED***
+.subscribe-newsletter .content article .accordion-title .accordion-button {
   display: none;
 }
-.subscribe-newsletter .content .accordion-title article h1 ***REMOVED***
+.subscribe-newsletter .content .accordion-title article h1 {
   text-align: left;
   font-size: 20px;
   letter-spacing: 0px;
   font-weight: normal;
   padding-bottom: 30px;
 }
-.subscribe-newsletter .content form ***REMOVED***
+.subscribe-newsletter .content form {
   width: 100%;
   float: left;
   max-width: 340px;
   padding: 0 20px;
 }
-.subscribe-newsletter .content form label ***REMOVED***
+.subscribe-newsletter .content form label {
   font-size: 12px;
   margin-right: 40px;
 }
-.subscribe-newsletter .content form input ***REMOVED***
+.subscribe-newsletter .content form input {
   width: 100%;
   height: 30px;
   margin: 7px 0;
   padding: 0 10px;
 }
-.subscribe-newsletter .content form .gender-inputs ***REMOVED***
+.subscribe-newsletter .content form .gender-inputs {
   width: 100%;
   display: flex;
   justify-content: flex-start;
 }
-.subscribe-newsletter .content form .gender-inputs .gender ***REMOVED***
+.subscribe-newsletter .content form .gender-inputs .gender {
   display: flex;
   align-items: center;
 }
-.subscribe-newsletter .content form .gender-inputs .gender input ***REMOVED***
+.subscribe-newsletter .content form .gender-inputs .gender input {
   width: 14px;
   margin-right: 5px;
 }
-.subscribe-newsletter .content form button ***REMOVED***
+.subscribe-newsletter .content form button {
   max-width: 340px;
 }
 
-.separation ***REMOVED***
+.separation {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.separation h1 ***REMOVED***
+.separation h1 {
   text-align: center;
   min-width: max-content;
   color: #888888;
@@ -177,25 +177,25 @@ body ***REMOVED***
   padding: 0 17px;
 }
 
-.separation-bar ***REMOVED***
+.separation-bar {
   width: 100%;
   height: 1px;
   background-color: #888888;
 }
 
 /*  Product  styles */
-.products-selection .content ***REMOVED***
+.products-selection .content {
   margin: 79px auto;
 }
-.products-selection .content .input ***REMOVED***
+.products-selection .content .input {
   display: flex;
   justify-content: center;
   margin-top: 39px;
 }
-.products-selection .content .input .product-list-btn ***REMOVED***
+.products-selection .content .input .product-list-btn {
   margin-top: 63px;
 }
-.products-selection .content .products ***REMOVED***
+.products-selection .content .products {
   display: grid;
   grid-template-columns: repeat(1, 100%);
   grid-gap: 41px;
@@ -205,53 +205,53 @@ body ***REMOVED***
   align-content: center;
   margin-top: 23px;
 }
-.products-selection .content .products .product ***REMOVED***
+.products-selection .content .products .product {
   display: flex;
   width: 100%;
   align-items: center;
   height: 160px;
   justify-content: space-between;
 }
-.products-selection .content .products .product .product-image ***REMOVED***
+.products-selection .content .products .product .product-image {
   width: 50%;
   height: 100%;
   object-fit: contain;
 }
-.products-selection .content .products .product .product-block ***REMOVED***
+.products-selection .content .products .product .product-block {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   padding-left: 23px;
 }
-.products-selection .content .products .product .product-block span ***REMOVED***
+.products-selection .content .products .product .product-block span {
   margin-top: 10px;
 }
-.products-selection .content .products .product .product-block .product-name ***REMOVED***
+.products-selection .content .products .product .product-block .product-name {
   font-size: 14px;
 }
-.products-selection .content .products .product .product-block .product-description ***REMOVED***
+.products-selection .content .products .product .product-block .product-description {
   display: block;
   font-size: 12px;
 }
-.products-selection .content .products .product .product-block .product-price ***REMOVED***
+.products-selection .content .products .product .product-block .product-price {
   font-size: 16px;
   font-weight: 700;
 }
-.products-selection .content .products .product .product-block .product-oldprice ***REMOVED***
+.products-selection .content .products .product .product-block .product-oldprice {
   font-size: 12px;
 }
-.products-selection .content .products .product .product-block .product-button ***REMOVED***
+.products-selection .content .products .product .product-block .product-button {
   max-width: 200px;
   height: 30px;
   margin-top: 10px;
 }
 
 /* Share newsletter styles */
-.share-newsletter .content ***REMOVED***
+.share-newsletter .content {
   margin: 90px auto 0;
 }
-.share-newsletter .content p ***REMOVED***
+.share-newsletter .content p {
   text-align: center;
   font-size: 12px;
   letter-spacing: 0px;
@@ -259,118 +259,118 @@ body ***REMOVED***
   margin-top: 44px;
   margin-bottom: 39px;
 }
-.share-newsletter .content .newsletter-form .email-inputs ***REMOVED***
+.share-newsletter .content .newsletter-form .email-inputs {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.share-newsletter .content .newsletter-form .input ***REMOVED***
+.share-newsletter .content .newsletter-form .input {
   width: 100%;
   margin: 0 2rem;
   max-width: 34rem;
 }
-.share-newsletter .content .newsletter-form .input label ***REMOVED***
+.share-newsletter .content .newsletter-form .input label {
   font-size: 12px;
   color: #888888;
 }
-.share-newsletter .content .newsletter-form .input input ***REMOVED***
+.share-newsletter .content .newsletter-form .input input {
   display: flex;
 }
-.share-newsletter .content .newsletter-form button ***REMOVED***
+.share-newsletter .content .newsletter-form button {
   margin-top: 61px;
 }
 
-.newsletter-form ***REMOVED***
+.newsletter-form {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.product-obs ***REMOVED***
+.product-obs {
   font-size: 12px;
 }
 
-.footer ***REMOVED***
+.footer {
   width: 100%;
   padding: 150px 0 90px 0;
   background: linear-gradient(355deg, #707070 60%, #ffffff 40%);
 }
-.footer .content p ***REMOVED***
+.footer .content p {
   color: #ffffff;
   text-align: center;
   font-size: 12px;
 }
 
-@media (max-width: 800px) ***REMOVED***
-  .content ***REMOVED***
+@media (max-width: 800px) {
+  .content {
     width: 90%;
   }
 
-  .subscribe-newsletter .content ***REMOVED***
+  .subscribe-newsletter .content {
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  .subscribe-newsletter .content article ***REMOVED***
+  .subscribe-newsletter .content article {
     max-width: 100%;
     margin-bottom: 30px;
   }
-  .subscribe-newsletter .content article .accordion-title ***REMOVED***
+  .subscribe-newsletter .content article .accordion-title {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
   }
-  .subscribe-newsletter .content article .accordion-title .accordion-button ***REMOVED***
+  .subscribe-newsletter .content article .accordion-title .accordion-button {
     width: 18px;
     height: 9px;
     display: contents;
     color: #888888;
     cursor: pointer;
   }
-  .subscribe-newsletter .content form ***REMOVED***
+  .subscribe-newsletter .content form {
     max-width: 100%;
   }
-  .subscribe-newsletter .content form button ***REMOVED***
+  .subscribe-newsletter .content form button {
     max-width: 100%;
   }
 }
-@media (min-width: 650px) ***REMOVED***
-  .share-newsletter .content .newsletter-form .email-inputs ***REMOVED***
+@media (min-width: 650px) {
+  .share-newsletter .content .newsletter-form .email-inputs {
     flex-direction: row;
   }
 
-  .header .content h3 ***REMOVED***
+  .header .content h3 {
     align-self: center;
   }
-  .header .content h1 ***REMOVED***
+  .header .content h1 {
     align-self: center;
   }
-  .header .content p ***REMOVED***
+  .header .content p {
     align-self: center;
   }
 
-  .subscribe-newsletter .content article p .panel ***REMOVED***
+  .subscribe-newsletter .content article p .panel {
     display: none;
     overflow: hidden;
   }
 }
-@media (min-width: 1000px) ***REMOVED***
-  .products-selection .content .products ***REMOVED***
+@media (min-width: 1000px) {
+  .products-selection .content .products {
     grid-template-columns: repeat(4, 210px);
   }
-  .products-selection .content .products .product ***REMOVED***
+  .products-selection .content .products .product {
     height: max-content;
     flex-direction: column;
     justify-content: flex-start;
   }
 }
-@media (min-width: 700px) ***REMOVED***
-  .products-selection .content .products .product .product-image ***REMOVED***
+@media (min-width: 700px) {
+  .products-selection .content .products .product .product-image {
     width: 70%;
   }
-  .products-selection .content .input .product-list-btn ***REMOVED***
+  .products-selection .content .input .product-list-btn {
     margin-top: 53px;
   }
 }

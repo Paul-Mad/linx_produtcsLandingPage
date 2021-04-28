@@ -1,13 +1,13 @@
 /* Products  styles */
 /* footer  styles */
 /*  end footer styles */
-* ***REMOVED***
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   outline: 0;
 }
-body ***REMOVED***
+body {
   width: 100%;
   min-height: 100%;
   margin: 0;
@@ -18,7 +18,7 @@ body ***REMOVED***
   color: #888888;
   background-color: #ffffff;
 }
-.btn ***REMOVED***
+.btn {
   max-width: 260px;
   width: 100%;
   height: 39px;
@@ -28,69 +28,69 @@ body ***REMOVED***
   cursor: pointer;
   background: #ffffff;
   color: #888888;
-  &:hover ***REMOVED***
+  &:hover {
     background: #dcdcdc;
   }
 }
-.form-input ***REMOVED***
+.form-input {
   width: 100%;
   height: 30px;
   margin: 10px 0;
   padding: 0 10px;
   font-size: 12px;
 }
-.content ***REMOVED***
+.content {
   max-width: 1000px;
   width: 70%;
   margin: 0 auto;
 }
-.container ***REMOVED***
+.container {
   width: 100%;
   background: #ffffff 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 
 /* header  styles */
-.header ***REMOVED***
+.header {
   width: 100%;
   padding-top: 69px;
   height: 100%;
   background: linear-gradient(184deg, #707070 75%, #ffffff 50%);
-  .content ***REMOVED***
+  .content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    h3 ***REMOVED***
+    h3 {
       color: #ffffff;
       font-size: 20px;
       font-weight: 400;
       align-self: flex-start;
     }
-    h1 ***REMOVED***
+    h1 {
       font-size: 40px;
       height: 48px;
       color: #ffffff;
       align-self: flex-start;
     }
-    p ***REMOVED***
+    p {
       font-size: 14px;
       margin-top: 24px;
       color: #ffffff;
       align-self: flex-start;
     }
-    span ***REMOVED***
+    span {
       color: #ffffff;
       align-self: center;
     }
-    .header-nav ***REMOVED***
+    .header-nav {
       margin: 0 auto 129px;
       margin-top: 50px;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       display: flex;
-      li ***REMOVED***
+      li {
         width: 160px;
         font-size: 14px;
         display: flex;
@@ -103,28 +103,28 @@ body ***REMOVED***
 }
 
 /* Subscribe  styles*/
-.subscribe-newsletter ***REMOVED***
-  .content ***REMOVED***
+.subscribe-newsletter {
+  .content {
     display: flex;
-    article ***REMOVED***
+    article {
       color: #888888;
       width: 100%;
       max-width: 520px;
       padding: 0 19px;
       float: left;
       display: block;
-      p ***REMOVED***
+      p {
         font-size: 12px;
       }
-      .accordion-title ***REMOVED***
-        .accordion-button ***REMOVED***
+      .accordion-title {
+        .accordion-button {
           display: none;
         }
       }
     }
-    .accordion-title ***REMOVED***
-      article ***REMOVED***
-        h1 ***REMOVED***
+    .accordion-title {
+      article {
+        h1 {
           text-align: left;
           font-size: 20px;
           letter-spacing: 0px;
@@ -133,45 +133,45 @@ body ***REMOVED***
         }
       }
     }
-    form ***REMOVED***
+    form {
       width: 100%;
       float: left;
       max-width: 340px;
       padding: 0 20px;
-      label ***REMOVED***
+      label {
         font-size: 12px;
         margin-right: 40px;
       }
-      input ***REMOVED***
+      input {
         width: 100%;
         height: 30px;
         margin: 7px 0;
         padding: 0 10px;
       }
-      .gender-inputs ***REMOVED***
+      .gender-inputs {
         width: 100%;
         display: flex;
         justify-content: flex-start;
-        .gender ***REMOVED***
+        .gender {
           display: flex;
           align-items: center;
-          input ***REMOVED***
+          input {
             width: 14px;
             margin-right: 5px;
           }
         }
       }
-      button ***REMOVED***
+      button {
         max-width: 340px;
       }
     }
   }
 }
-.separation ***REMOVED***
+.separation {
   display: flex;
   justify-content: center;
   align-items: center;
-  h1 ***REMOVED***
+  h1 {
     text-align: center;
     min-width: max-content;
     color: #888888;
@@ -179,25 +179,25 @@ body ***REMOVED***
     padding: 0 17px;
   }
 }
-.separation-bar ***REMOVED***
+.separation-bar {
   width: 100%;
   height: 1px;
   background-color: #888888;
 }
 
 /*  Product  styles */
-.products-selection ***REMOVED***
-  .content ***REMOVED***
+.products-selection {
+  .content {
     margin: 79px auto;
-    .input ***REMOVED***
+    .input {
       display: flex;
       justify-content: center;
       margin-top: 39px;
-      .product-list-btn ***REMOVED***
+      .product-list-btn {
         margin-top: 63px;
       }
     }
-    .products ***REMOVED***
+    .products {
       display: grid;
       grid-template-columns: repeat(1, 100%);
       grid-gap: 41px;
@@ -206,41 +206,41 @@ body ***REMOVED***
       justify-content: center;
       align-content: center;
       margin-top: 23px;
-      .product ***REMOVED***
+      .product {
         display: flex;
         width: 100%;
         align-items: center;
         height: 160px;
         justify-content: space-between;
-        .product-image ***REMOVED***
+        .product-image {
           width: 50%;
           height: 100%;
           object-fit: contain;
         }
-        .product-block ***REMOVED***
+        .product-block {
           width: 100%;
           height: 100%;
           display: flex;
           flex-direction: column;
           padding-left: 23px;
-          span ***REMOVED***
+          span {
             margin-top: 10px;
           }
-          .product-name ***REMOVED***
+          .product-name {
             font-size: 14px;
           }
-          .product-description ***REMOVED***
+          .product-description {
             display: block;
             font-size: 12px;
           }
-          .product-price ***REMOVED***
+          .product-price {
             font-size: 16px;
             font-weight: 700;
           }
-          .product-oldprice ***REMOVED***
+          .product-oldprice {
             font-size: 12px;
           }
-          .product-button ***REMOVED***
+          .product-button {
             max-width: 200px;
             height: 30px;
             margin-top: 10px;
@@ -252,10 +252,10 @@ body ***REMOVED***
 }
 
 /* Share newsletter styles */
-.share-newsletter ***REMOVED***
-  .content ***REMOVED***
+.share-newsletter {
+  .content {
     margin: 90px auto 0;
-    p ***REMOVED***
+    p {
       text-align: center;
       font-size: 12px;
       letter-spacing: 0px;
@@ -263,69 +263,69 @@ body ***REMOVED***
       margin-top: 44px;
       margin-bottom: 39px;
     }
-    .newsletter-form ***REMOVED***
-      .email-inputs ***REMOVED***
+    .newsletter-form {
+      .email-inputs {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
       }
-      .input ***REMOVED***
+      .input {
         width: 100%;
         margin: 0 2rem;
         max-width: 34rem;
-        label ***REMOVED***
+        label {
           font-size: 12px;
           color: #888888;
         }
-        input ***REMOVED***
+        input {
           display: flex;
         }
       }
-      button ***REMOVED***
+      button {
         margin-top: 61px;
       }
     }
   }
 }
-.newsletter-form ***REMOVED***
+.newsletter-form {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.product-obs ***REMOVED***
+.product-obs {
   font-size: 12px;
 }
-.footer ***REMOVED***
+.footer {
   width: 100%;
   padding: 150px 0 90px 0;
   background: linear-gradient(355deg, #707070 60%, #ffffff 40%);
-  .content ***REMOVED***
-    p ***REMOVED***
+  .content {
+    p {
       color: #ffffff;
       text-align: center;
       font-size: 12px;
     }
   }
 }
-@media (max-width: 800px) ***REMOVED***
-  .content ***REMOVED***
+@media (max-width: 800px) {
+  .content {
     width: 90%;
   }
-  .subscribe-newsletter ***REMOVED***
-    .content ***REMOVED***
+  .subscribe-newsletter {
+    .content {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      article ***REMOVED***
+      article {
         max-width: 100%;
         margin-bottom: 30px;
-        .accordion-title ***REMOVED***
+        .accordion-title {
           display: flex;
           justify-content: space-between;
           margin-bottom: 20px;
-          .accordion-button ***REMOVED***
+          .accordion-button {
             width: 18px;
             height: 9px;
             display: contents;
@@ -334,43 +334,43 @@ body ***REMOVED***
           }
         }
       }
-      form ***REMOVED***
+      form {
         max-width: 100%;
-        button ***REMOVED***
+        button {
           max-width: 100%;
         }
       }
     }
   }
 }
-@media (min-width: 650px) ***REMOVED***
-  .share-newsletter ***REMOVED***
-    .content ***REMOVED***
-      .newsletter-form ***REMOVED***
-        .email-inputs ***REMOVED***
+@media (min-width: 650px) {
+  .share-newsletter {
+    .content {
+      .newsletter-form {
+        .email-inputs {
           flex-direction: row;
         }
       }
     }
   }
-  .header ***REMOVED***
-    .content ***REMOVED***
-      h3 ***REMOVED***
+  .header {
+    .content {
+      h3 {
         align-self: center;
       }
-      h1 ***REMOVED***
+      h1 {
         align-self: center;
       }
-      p ***REMOVED***
+      p {
         align-self: center;
       }
     }
   }
-  .subscribe-newsletter ***REMOVED***
-    .content ***REMOVED***
-      article ***REMOVED***
-        p ***REMOVED***
-          .panel ***REMOVED***
+  .subscribe-newsletter {
+    .content {
+      article {
+        p {
+          .panel {
             display: none;
             overflow: hidden;
           }
@@ -379,11 +379,11 @@ body ***REMOVED***
     }
   }
 }
-@media (min-width: 1000px) ***REMOVED***
-  .products-selection ***REMOVED***
-    .content ***REMOVED***
-      .products ***REMOVED***
-        .product ***REMOVED***
+@media (min-width: 1000px) {
+  .products-selection {
+    .content {
+      .products {
+        .product {
           height: max-content;
           flex-direction: column;
           justify-content: flex-start;
@@ -393,18 +393,18 @@ body ***REMOVED***
     }
   }
 }
-@media (min-width: 700px) ***REMOVED***
-  .products-selection ***REMOVED***
-    .content ***REMOVED***
-      .products ***REMOVED***
-        .product ***REMOVED***
-          .product-image ***REMOVED***
+@media (min-width: 700px) {
+  .products-selection {
+    .content {
+      .products {
+        .product {
+          .product-image {
             width: 70%;
           }
         }
       }
-      .input ***REMOVED***
-        .product-list-btn ***REMOVED***
+      .input {
+        .product-list-btn {
           margin-top: 53px;
         }
       }

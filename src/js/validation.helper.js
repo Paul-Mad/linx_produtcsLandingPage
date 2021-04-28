@@ -1,7 +1,7 @@
 // ------------- CPF VALIDATION--------------------------------
 
 //code from Receita Federal
-export const validateCpf = (cpf) => ***REMOVED***
+export const validateCpf = (cpf) => {
   cpf = cpf.replace(/[^\d]+/g, "");
 
   if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
@@ -19,20 +19,20 @@ export const validateCpf = (cpf) => ***REMOVED***
   if (resto == 10 || resto == 11) resto = 0;
   if (resto != parseInt(cpf.substring(10, 11))) return false;
   return cpf;
-***REMOVED***
+};
 
 // set mask to the cpf-input
-const cpfMask = IMask(document.getElementById("cpf-input"), ***REMOVED***
+const cpfMask = IMask(document.getElementById("cpf-input"), {
   mask: "000.000.000-00",
 });
 
 //-----------------EMAIL-VALIDATION------------------
 
-export const ValidateEmail = (email) => ***REMOVED***
-  const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`***REMOVED***|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  if (email.match(emailFormat)) ***REMOVED***
+export const ValidateEmail = (email) => {
+  const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (email.match(emailFormat)) {
     return email;
-  } else ***REMOVED***
+  } else {
     return false;
   }
-***REMOVED***
+};
